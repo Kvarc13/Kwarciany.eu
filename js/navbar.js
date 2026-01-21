@@ -124,7 +124,7 @@ class CustomNavbar extends HTMLElement {
                             <i data-feather="mail"></i>
                             <span>Contact</span>
                         </a>
-                        <a href="https://github.com/Kvarc13/Kwarciany.eu.git" class="nav-link" download="Maciej_Kwarciany_CV.pdf">
+                        <a href="/assets/Maciej_Kwarciany_CV.pdf" class="nav-link" download="Maciej_Kwarciany_CV.pdf">
                             <i data-feather="download"></i>
                             <span>Download CV</span>
                         </a>
@@ -148,6 +148,7 @@ class CustomNavbar extends HTMLElement {
                 navLinks.classList.remove('active');
             });
         });
+        
     }
 }
 
