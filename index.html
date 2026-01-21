@@ -426,23 +426,17 @@
 
     <custom-footer></custom-footer>
 
-    <script src="components/navbar.js" defer></script>
-    <script src="components/footer.js" defer></script>
-    <script src="script.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-    <script>
-        feather.replace();
-        
-        // Replace icons whenever new content is loaded
-        const observer = new MutationObserver(() => {
-            feather.replace();
-        });
+<script src="components/navbar.js" defer></script>
+<script src="components/footer.js" defer></script>
+<script src="script.js" defer></script>
 
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-    </script>
-    <script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    feather.replace();
+  });
+</script>
+
 </body>
 </html>
