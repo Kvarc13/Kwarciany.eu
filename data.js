@@ -75,16 +75,16 @@ const cvData = {
     ],
     skills: {
         technical: [
-            { name: "Advanced Excel", level: 90 },
-            { name: "PostgreSQL", level: 80 },
-            { name: "Python", level: 60 },
-            { name: "AWS Athena", level: 70 }
+            { name: "Advanced Excel", level: 9 },
+            { name: "PostgreSQL", level: 8 },
+            { name: "Python", level: 66 },
+            { name: "AWS Athena", level: 7 }
         ],
         analytical: [
-            { name: "Google Analytics", level: 70 },
-            { name: "Web Traffic Analysis", level: 90 },
-            { name: "Data Auditing", level: 90 },
-            { name: "Cloud Computing", level: 70 }
+            { name: "Google Analytics", level: 7 },
+            { name: "Web Traffic Analysis", level: 9 },
+            { name: "Data Auditing", level: 9 },
+            { name: "Cloud Computing", level: 7 }
         ]
     },
     certificates: [
