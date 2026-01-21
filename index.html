@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Technical Key Account Manager & Data Analyst. Bridging the gap between strategy and execution.">
-    <title>Maciej Kwarciany | Data Alchemist</title>
+    <title>Maciej Kwarciany | Data Scientist & Technical Account Manager</title>
     <meta property="og:title" content="Maciej Kwarciany | Data Alchemist">
     <meta property="og:description" content="Technical Key Account Manager & Data Analyst">
     <meta property="og:type" content="website">
@@ -48,20 +48,20 @@
 
         <section id="summary" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Personal Summary</h2>
-            <div class="bg-white p-8">
-                <div id="summary-text" class="mb-4"></div>
-                <div class="grid md:grid-cols-2 gap-6 mt-6">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-secondary-700 flex items-center gap-2">
-                            <i data-feather="dollar-sign" class="text-primary-500"></i> Business Expertise
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <div id="summary-text" class="mb-4 text-lg leading-relaxed"></div>
+                <div class="grid md:grid-cols-2 gap-8 mt-8">
+                    <div class="bg-primary-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-3 text-secondary-800 flex items-center gap-2">
+                            <i data-feather="dollar-sign" class="text-primary-600"></i> Business Expertise
                         </h3>
-                        <p id="summary-business"></p>
+                        <p id="summary-business" class="text-secondary-700"></p>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3 text-secondary-700 flex items-center gap-2">
-                            <i data-feather="code" class="text-primary-500"></i> Technical Expertise
+                    <div class="bg-secondary-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-3 text-secondary-800 flex items-center gap-2">
+                            <i data-feather="code" class="text-primary-600"></i> Technical Expertise
                         </h3>
-                        <p id="summary-tech"></p>
+                        <p id="summary-tech" class="text-secondary-700"></p>
                     </div>
                 </div>
             </div>
@@ -73,23 +73,21 @@
                 </div>
         </section>
 
-        <section id="achievements" class="mb-24">
-            <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Key Achievements</h2>
-            <div id="achievements-list" class="grid md:grid-cols-2 gap-6">
-                 </div>
-        </section>
-
         <section id="skills" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Skills</h2>
-            <div class="bg-white rounded-xl shadow-md p-6">
-                <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <div class="grid md:grid-cols-2 gap-12">
                     <div>
-                        <h3 class="text-xl font-semibold mb-4">Technical Skills</h3>
-                        <div id="skills-tech" class="space-y-4"></div>
+                        <h3 class="text-2xl font-semibold mb-6 flex items-center gap-2">
+                            <i data-feather="terminal" class="text-primary-500"></i> Technical
+                        </h3>
+                        <div id="skills-tech-tags" class="flex flex-wrap gap-2"></div>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-4">Analytical Skills</h3>
-                        <div id="skills-analytical" class="space-y-4"></div>
+                        <h3 class="text-2xl font-semibold mb-6 flex items-center gap-2">
+                            <i data-feather="bar-chart-2" class="text-primary-500"></i> Analytical
+                        </h3>
+                        <div id="skills-analytical-tags" class="flex flex-wrap gap-2"></div>
                     </div>
                 </div>
             </div>
@@ -106,19 +104,19 @@
         <section id="contact" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Get In Touch</h2>
             <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-6">
-                    <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-12">
                         <div>
-                            <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                            <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
                             <ul id="contact-list" class="space-y-4">
                                 </ul>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <h3 class="text-xl font-semibold mb-6 flex items-center gap-2">
                                 <i data-feather="heart" class="text-primary-500"></i>
                                 Personal Interests
                             </h3>
-                            <div id="interests-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div id="interests-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                                 </div>
                         </div>
                     </div>
@@ -133,5 +131,35 @@
     <script src="components/navbar.js" defer></script>
     <script src="components/footer.js" defer></script>
     <script src="script.js" defer></script>
+
+    <script id="render-fix">
+        // This script ensures the skills render as Tags (no bars) 
+        // regardless of what the old script.js tries to do.
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const renderTags = (data, elementId) => {
+                    const container = document.getElementById(elementId);
+                    if (!container || !data) return;
+                    container.innerHTML = ''; // Clear anything script.js might have added
+                    
+                    data.forEach(skillName => {
+                        const tag = document.createElement('span');
+                        tag.className = 'px-4 py-2 bg-primary-100 text-primary-800 rounded-lg text-sm font-medium border border-primary-200 shadow-sm hover:bg-primary-200 transition-colors';
+                        tag.textContent = skillName;
+                        container.appendChild(tag);
+                    });
+                };
+
+                // Render skills using the new array format from data.js
+                if(typeof cvData !== 'undefined') {
+                    renderTags(cvData.skills.technical, 'skills-tech-tags');
+                    renderTags(cvData.skills.analytical, 'skills-analytical-tags');
+                    
+                    // Re-trigger Feather icons just in case
+                    if(typeof feather !== 'undefined') feather.replace();
+                }
+            }, 100); // Slight delay to override main script
+        });
+    </script>
 </body>
 </html>
