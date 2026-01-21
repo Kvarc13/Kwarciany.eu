@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical Key Account Manager & Data Analyst. Bridging the gap between strategy and execution.">
     <title>Maciej Kwarciany | Data Alchemist</title>
     <meta property="og:title" content="Maciej Kwarciany | Data Alchemist">
-    <meta name="description" content="Technical Key Account Manager & Data Analyst. Bridging the gap between strategy and execution with SQL, Python, and business expertise.">
+    <meta property="og:description" content="Technical Key Account Manager & Data Analyst">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kwarciany.eu">
     <link rel="stylesheet" href="style.css">
@@ -16,30 +17,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        secondary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
+                        primary: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' },
+                        secondary: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a' }
                     }
                 }
             }
@@ -47,377 +26,101 @@
     </script>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
-<custom-navbar></custom-navbar>
+    <custom-navbar></custom-navbar>
     
     <main class="container mx-auto px-4 py-12 max-w-6xl">
-        <!-- Hero Section -->
         <section class="mb-20">
             <div class="flex flex-col md:flex-row items-center gap-8">
                 <div class="md:w-1/3">
                     <div class="rounded-full overflow-hidden border-4 border-primary-500 shadow-lg">
-                        <img src="/assets/profile.jpg" alt="Maciej Kwarciany" class="w-full h-auto">
+                        <img id="hero-img" src="" alt="Profile" class="w-full h-auto">
                     </div>
                 </div>
                 <div class="md:w-2/3">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-4 text-gray-900">Maciej Kwarciany</h1>
-                    <h2 class="text-2xl md:text-3xl font-medium mb-6 text-gray-600 tracking-wide">Technical Key Account Manager & Data Analyst</h2>
-<p class="text-lg mb-6">Business-savvy data driven analyst blending strategic thinking with technical expertise. Bridging the gap between strategy and execution in tech-driven environments.</p>
-                            <div class="flex flex-wrap gap-4">
-                                <a href="#contact" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
-                                    <i data-feather="mail"></i> Contact Me
-                                </a>
-                                <a href="#experience" class="border border-primary-500 text-primary-500 hover:bg-primary-50 px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
-                                    <i data-feather="briefcase"></i> My Experience
-                                </a>
-                                <a href="/assets/Maciej_Kwarciany_CV.pdf" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2" download="Maciej_Kwarciany_CV.pdf">
-                                    <i data-feather="download"></i> Download CV
-                                </a>
-                            </div>
-</div>
+                    <h1 id="hero-name" class="text-5xl md:text-6xl font-bold mb-4 text-gray-900"></h1>
+                    <h2 id="hero-role" class="text-2xl md:text-3xl font-medium mb-6 text-gray-600 tracking-wide"></h2>
+                    <p id="hero-desc" class="text-lg mb-6"></p>
+                    <div class="flex flex-wrap gap-4" id="hero-buttons">
+                        </div>
+                </div>
             </div>
         </section>
 
-        <!-- Summary Section -->
         <section id="summary" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Personal Summary</h2>
             <div class="bg-white p-8">
-<p class="mb-4">Business-savvy data driven analyst with a blend of strategic thinker and technical expert. Fluent in SQL, and data analytics yet able to run high impact contract negotiations.</p>
-                <p class="mb-4">Bridging the gap between strategy and execution in tech-driven environments. Bringing a holistic approach to problem solving, especially in high-stakes, compliance-sensitive environments.</p>
+                <div id="summary-text" class="mb-4"></div>
                 <div class="grid md:grid-cols-2 gap-6 mt-6">
                     <div>
                         <h3 class="text-xl font-semibold mb-3 text-secondary-700 flex items-center gap-2">
                             <i data-feather="dollar-sign" class="text-primary-500"></i> Business Expertise
                         </h3>
-                        <p>Understanding of market dynamics, financial models, and corporate strategy. Ability to negotiate and close high-impact contracts, ensuring agreements are profitable and aligned with long-term company objectives.</p>
+                        <p id="summary-business"></p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-3 text-secondary-700 flex items-center gap-2">
                             <i data-feather="code" class="text-primary-500"></i> Technical Expertise
                         </h3>
-                        <p>Knowledge of system architecture and data flows enables discussion of solution feasibility, troubleshooting bottlenecks, and ensuring technical builds align with company vision.</p>
+                        <p id="summary-tech"></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Professional Experience</h2>
-<div class="space-y-8">
-                <!-- Current Role -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-primary-700">Commerce Media Tech (Zeropark)</h3>
-                                <p class="text-secondary-600">Technical Key Account Manager</p>
-                            </div>
-                            <div class="mt-2 md:mt-0">
-                                <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">06.2023 - Present</span>
-                            </div>
-                        </div>
-                        <ul class="space-y-2 list-disc pl-5">
-                            <li>Managed enterprise-level client relationships, driving revenue growth for high-value accounts</li>
-                            <li>Negotiated contracts and collaborated with C-level stakeholders to align technical solutions with business goals</li>
-                            <li>Partnered with cross-functional teams to implement AI-driven-tools for web traffic optimisation</li>
-                            <li>Built custom analytics dashboards to track KPIs, enabling clients to scale budgets with real-time decision-making insights</li>
-                            <li>Spearheaded a critical migration for a top client, improving efficiency and increasing by 85% YoY revenue</li>
-                        </ul>
-                    </div>
+            <div id="experience-list" class="space-y-8">
                 </div>
-
-                <!-- Previous Roles -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-primary-700">Commerce Media Tech (Zeropark)</h3>
-                                <p class="text-secondary-600">Account Manager / Senior Account Manager</p>
-                            </div>
-                            <div class="mt-2 md:mt-0">
-                                <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">06.2020 - 05.2023</span>
-                            </div>
-                        </div>
-                        <ul class="space-y-2 list-disc pl-5">
-                            <li>Acted as a bridge between clients and engineering teams, translating business needs into tech requirements</li>
-                            <li>Collaborated with Product teams to roadmap client-requested features</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-primary-700">Commerce Media Tech (Zeropark)</h3>
-                                <p class="text-secondary-600">Content Quality Specialist</p>
-                            </div>
-                            <div class="mt-2 md:mt-0">
-                                <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">05.2019 - 04.2020</span>
-                            </div>
-                        </div>
-                        <ul class="space-y-2 list-disc pl-5">
-                            <li>Conducted in-depth audits of ad traffic quality across publisher networks, implementing fraud detection measures</li>
-                            <li>Developed internal guidelines for traffic filtering and content approval later adopted as a company-wide standard</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </section>
 
-        <!-- Achievements Section -->
         <section id="achievements" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Key Achievements</h2>
-<div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-primary-100 p-3 rounded-full">
-                            <i data-feather="trending-up" class="text-primary-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Revenue Optimization</h3>
-                            <p>Identified and analyzed inconsistencies in web traffic routing from key customers. Rebuilt data flow and tracking logic, resulting in 85% increase in client revenue.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-primary-100 p-3 rounded-full">
-                            <i data-feather="cpu" class="text-primary-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Linguistic Analysis Tool</h3>
-                            <p>Developed tool to detect domain name misspellings using Levenshtein distance, increasing inventory monetization by ~40%.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-primary-100 p-3 rounded-full">
-                            <i data-feather="zap" class="text-primary-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Process Innovation</h3>
-                            <p>Developed and introduced multiple MVP solutions that were later implemented company-wide, improving internal processes efficiency & reducing workload.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-md p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-primary-100 p-3 rounded-full">
-                            <i data-feather="users" class="text-primary-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Volunteer Leadership</h3>
-                            <p>Head Event Coordinator for "Kraków Mountain Festival", managing event operations, volunteer workflow, and equipment delivery coordination.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="achievements-list" class="grid md:grid-cols-2 gap-6">
+                 </div>
         </section>
-        <!-- Skills Section -->
+
         <section id="skills" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Skills</h2>
-<div class="bg-white rounded-xl shadow-md p-6">
+            <div class="bg-white rounded-xl shadow-md p-6">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <h3 class="text-xl font-semibold mb-4">Technical Skills</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-secondary-700">Advanced Excel</span>
-                                    <span class="text-primary-600">9/10</span>
-                                </div>
-                                <div class="w-full bg-secondary-200 rounded-full h-2.5">
-                                    <div class="bg-primary-500 h-2.5 rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-secondary-700">PostgreSQL</span>
-                                    <span class="text-primary-600">8/10</span>
-                                </div>
-                                <div class="w-full bg-secondary-200 rounded-full h-2.5">
-                                    <div class="bg-primary-500 h-2.5 rounded-full" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-secondary-700">Python</span>
-                                    <span class="text-primary-600">6/10</span>
-                                </div>
-                                <div class="w-full bg-secondary-200 rounded-full h-2.5">
-                                    <div class="bg-primary-500 h-2.5 rounded-full" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-secondary-700">AWS Athena</span>
-                                    <span class="text-primary-600">7/10</span>
-                                </div>
-                                <div class="w-full bg-secondary-200 rounded-full h-2.5">
-                                    <div class="bg-primary-500 h-2.5 rounded-full" style="width: 70%"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="skills-tech" class="space-y-4"></div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4">Analytical Skills</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-secondary-700">Google Analytics</span>
-                                    <span class="text-primary-600">7/10</span>
-                                </div>
-                                <div class="w-full bg-secondary-200 rounded-full h-2.5">
-                                    <div class="bg-primary-500 h-2.5 rounded-full" style="width: 70%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-secondary-700">Web Traffic Analysis</span>
-                                    <span class="text-primary-600">9/10</span>
-                                </div>
-                                <div class="w-full bg-secondary-200 rounded-full h-2.5">
-                                    <div class="bg-primary-500 h-2.5 rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-secondary-700">Data Auditing</span>
-                                    <span class="text-primary-600">9/10</span>
-                                </div>
-                                <div class="w-full bg-secondary-200 rounded-full h-2.5">
-                                    <div class="bg-primary-500 h-2.5 rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-secondary-700">Cloud Computing</span>
-                                    <span class="text-primary-600">7/10</span>
-                                </div>
-                                <div class="w-full bg-secondary-200 rounded-full h-2.5">
-                                    <div class="bg-primary-500 h-2.5 rounded-full" style="width: 70%"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="skills-analytical" class="space-y-4"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certificates Section -->
         <section id="certificates" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Certificates</h2>
-<div class="bg-white rounded-xl shadow-md p-6">
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="border border-secondary-200 rounded-lg p-4">
-                        <h3 class="text-lg font-semibold mb-2">Python for Data Science, AI & Development</h3>
-                        <p class="text-secondary-600 mb-2">IBM | Oct 2025</p>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div id="certificates-list" class="grid md:grid-cols-3 gap-6">
                     </div>
-                    <div class="border border-secondary-200 rounded-lg p-4">
-                        <h3 class="text-lg font-semibold mb-2">Data Analysis with Python</h3>
-                        <p class="text-secondary-600 mb-2">IBM | Sep 2025</p>
-                    </div>
-                    <div class="border border-secondary-200 rounded-lg p-4">
-                        <h3 class="text-lg font-semibold mb-2">Databases and SQL for Data Science</h3>
-                        <p class="text-secondary-600 mb-2">IBM | Aug 2025</p>
-                    </div>
-                    <div class="border border-secondary-200 rounded-lg p-4">
-                        <h3 class="text-lg font-semibold mb-2">Generative AI Agents with Vertex AI</h3>
-                        <p class="text-secondary-600 mb-2">Google Cloud | Feb 2025</p>
-                    </div>
-                    <div class="border border-secondary-200 rounded-lg p-4">
-                        <h3 class="text-lg font-semibold mb-2">ChatGPT & Zapier: Agentic AI</h3>
-                        <p class="text-secondary-600 mb-2">Vanderbilt University | Feb 2025</p>
-                    </div>
-                    <div class="border border-secondary-200 rounded-lg p-4">
-                        <h3 class="text-lg font-semibold mb-2">Open Source Intelligence (OSINT)</h3>
-                        <p class="text-secondary-600 mb-2">Niebezpiecznik.pl | Jun 2021</p>
-                    </div>
-                </div>
-</div>
+            </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Get In Touch</h2>
-<div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
                 <div class="p-6">
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
                             <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-center gap-3">
-                                    <i data-feather="mail" class="text-primary-500"></i>
-                                    <a href="mailto:Maciej.Kwarciany@gmail.com" class="hover:text-primary-500 transition-colors">Maciej.Kwarciany@gmail.com</a>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <i data-feather="phone" class="text-primary-500"></i>
-                                    <a href="tel:+48600972749" class="hover:text-primary-500 transition-colors">+48 600 972 749</a>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <i data-feather="linkedin" class="text-primary-500"></i>
-                                    <a href="https://linkedin.com/in/maciej-kwarciany" target="_blank" class="hover:text-primary-500 transition-colors">linkedin.com/in/maciej-kwarciany</a>
-                                </li>
-                            </ul>
+                            <ul id="contact-list" class="space-y-4">
+                                </ul>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
                                 <i data-feather="heart" class="text-primary-500"></i>
                                 Personal Interests
                             </h3>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="interests-grid">
-<div class="flex flex-col items-center">
-                                    <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
-                                        <img src="https://huggingface.co/spaces/MaciejKW/data-alchemist-cv-portal/resolve/main/images/Brewing.png" alt="Brewing" class="w-6 h-6">
-                                    </div>
-                                    <span class="text-sm text-center">Brewing</span>
+                            <div id="interests-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
-                                        <img src="https://huggingface.co/spaces/MaciejKW/data-alchemist-cv-portal/resolve/main/images/Diving.png" alt="Diving" class="w-6 h-6">
-                                    </div>
-                                    <span class="text-sm text-center">Diving</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
-                                        <img src="https://huggingface.co/spaces/MaciejKW/data-alchemist-cv-portal/resolve/main/images/Mountains.png" alt="Mountains" class="w-6 h-6">
-                                    </div>
-                                    <span class="text-sm text-center">Mountains</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
-                                        <img src="https://huggingface.co/spaces/MaciejKW/data-alchemist-cv-portal/resolve/main/images/Travel.png" alt="Travel" class="w-6 h-6">
-                                    </div>
-                                    <span class="text-sm text-center">Travel</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
-                                        <img src="https://huggingface.co/spaces/MaciejKW/data-alchemist-cv-portal/resolve/main/images/Sailing.png" alt="Sailing" class="w-6 h-6">
-                                    </div>
-                                    <span class="text-sm text-center">Sailing</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
-                                        <img src="https://huggingface.co/spaces/MaciejKW/data-alchemist-cv-portal/resolve/main/images/Climbing.png" alt="Climbing" class="w-6 h-6">
-                                    </div>
-                                    <span class="text-sm text-center">Climbing</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
-                                        <img src="https://huggingface.co/spaces/MaciejKW/data-alchemist-cv-portal/resolve/main/images/Reading.png" alt="Reading" class="w-6 h-6">
-                                    </div>
-                                    <span class="text-sm text-center">Reading</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
-                                        <img src="https://huggingface.co/spaces/MaciejKW/data-alchemist-cv-portal/resolve/main/images/Cinema.png" alt="Cinema" class="w-6 h-6">
-                                    </div>
-                                    <span class="text-sm text-center">Cinema</span>
-                                </div>
-</div>
-</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -426,17 +129,9 @@
 
     <custom-footer></custom-footer>
 
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-<script src="components/navbar.js" defer></script>
-<script src="components/footer.js" defer></script>
-<script src="script.js" defer></script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    feather.replace();
-  });
-</script>
-
+    <script src="data.js"></script>
+    <script src="components/navbar.js" defer></script>
+    <script src="components/footer.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
