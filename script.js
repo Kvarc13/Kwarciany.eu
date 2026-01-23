@@ -1,129 +1,177 @@
-/* script.js - Handles rendering of the CV data */
+/* script.js */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    renderContent();
     
-    // --- 1. HERO SECTION ---
-    if (document.getElementById('hero-name')) {
-        document.getElementById('hero-name').textContent = cvData.personal.name;
-        document.getElementById('hero-role').textContent = cvData.personal.role;
-        document.getElementById('hero-desc').textContent = cvData.personal.heroDescription;
-        
-        const img = document.getElementById('hero-img');
-        if (img) img.src = cvData.personal.profileImage;
-
-        // Hero Buttons
-        const heroBtns = document.getElementById('hero-buttons');
-        if (heroBtns) {
-            heroBtns.innerHTML = `
-                <a href="mailto:${cvData.personal.email}" class="px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors flex items-center gap-2">
-                    <i data-feather="mail"></i> Contact Me
-                </a>
-                <a href="${cvData.personal.cvPdfUrl}" target="_blank" class="px-6 py-3 bg-white text-primary-600 border border-primary-200 rounded-lg font-medium hover:bg-gray-50 transition-colors flex items-center gap-2">
-                    <i data-feather="download"></i> Download CV
-                </a>
-            `;
-        }
-    }
-
-    // --- 2. SUMMARY SECTION ---
-    const summaryContainer = document.getElementById('summary-text');
-    if (summaryContainer && cvData.summary.paragraphs) {
-        summaryContainer.innerHTML = cvData.summary.paragraphs
-            .map(p => `<p class="mb-4 text-secondary-700">${p}</p>`)
-            .join('');
-    }
+    // Initialize Feather icons after content is loaded
+    feather.replace();
     
-    if (document.getElementById('summary-business')) {
-        document.getElementById('summary-business').textContent = cvData.summary.businessExpertise;
-    }
-    if (document.getElementById('summary-tech')) {
-        document.getElementById('summary-tech').textContent = cvData.summary.technicalExpertise;
-    }
+    // Intersection Observer for animations
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
 
-    // --- 3. EXPERIENCE SECTION ---
+    sections.forEach(section => observer.observe(section));
+
+    // Smooth scroll offset logic
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const offset = 100;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        });
+    });
+});
+
+function renderContent() {
+    // 1. Hero
+    document.getElementById('hero-img').src = cvData.personal.profileImage;
+    document.getElementById('hero-name').textContent = cvData.personal.name;
+    document.getElementById('hero-role').textContent = cvData.personal.role;
+    document.getElementById('hero-desc').textContent = cvData.personal.heroDescription;
+    
+    const heroBtns = document.getElementById('hero-buttons');
+    heroBtns.innerHTML = `
+        <a href="#contact" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
+            <i data-feather="mail"></i> Contact Me
+        </a>
+        <a href="#experience" class="border border-primary-500 text-primary-500 hover:bg-primary-50 px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
+            <i data-feather="briefcase"></i> My Experience
+        </a>
+        <a href="${cvData.personal.cvPdfUrl}" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
+            <i data-feather="download"></i> Download CV
+        </a>
+    `;
+
+    // 2. Summary
+    const summaryDiv = document.getElementById('summary-text');
+    cvData.summary.paragraphs.forEach(p => {
+        const pTag = document.createElement('p');
+        pTag.className = "mb-4";
+        pTag.textContent = p;
+        summaryDiv.appendChild(pTag);
+    });
+    document.getElementById('summary-business').textContent = cvData.summary.businessExpertise;
+    document.getElementById('summary-tech').textContent = cvData.summary.technicalExpertise;
+
+    // 3. Experience
     const expList = document.getElementById('experience-list');
-    if (expList && cvData.experience) {
-        expList.innerHTML = cvData.experience.map(job => `
-            <div class="relative pl-8 border-l-2 border-primary-200 pb-8 last:pb-0">
-                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary-500 border-4 border-white shadow-sm"></div>
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-secondary-100">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+    cvData.experience.forEach(job => {
+        const html = `
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900">${job.role}</h3>
-                            <div class="text-primary-600 font-medium">${job.company}</div>
+                            <h3 class="text-2xl font-bold text-primary-700">${job.company}</h3>
+                            <p class="text-secondary-600">${job.role}</p>
                         </div>
-                        <span class="inline-block mt-2 md:mt-0 px-3 py-1 bg-secondary-100 text-secondary-600 text-sm rounded-full font-medium">
-                            ${job.period}
-                        </span>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">${job.period}</span>
+                        </div>
                     </div>
-                    <ul class="space-y-2">
-                        ${job.description.map(desc => {
-                            // Bold formatting helper
-                            const formattedDesc = desc.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900">$1</strong>');
-                            return `<li class="flex items-start gap-3 text-secondary-600">
-                                <i data-feather="check" class="w-5 h-5 text-primary-500 mt-0.5 shrink-0"></i>
-                                <span>${formattedDesc}</span>
-                            </li>`;
-                        }).join('')}
+                    <ul class="space-y-2 list-disc pl-5">
+                        ${job.description.map(item => `<li>${item}</li>`).join('')}
                     </ul>
                 </div>
             </div>
-        `).join('');
-    }
+        `;
+        expList.insertAdjacentHTML('beforeend', html);
+    });
 
-    // --- 4. SKILLS SECTION (New Tag Logic) ---
-    const renderSkills = (skills, elementId) => {
-        const container = document.getElementById(elementId);
-        if (container && skills) {
-            container.innerHTML = skills.map(skill => `
-                <span class="px-4 py-2 bg-primary-50 text-primary-700 rounded-lg text-sm font-medium border border-primary-100">
-                    ${skill}
-                </span>
-            `).join('');
-        }
-    };
-
-    // Note: Matches the new IDs in index.html: 'skills-tech-tags' and 'skills-analytical-tags'
-    renderSkills(cvData.skills.technical, 'skills-tech-tags');
-    renderSkills(cvData.skills.analytical, 'skills-analytical-tags');
-
-    // --- 5. CERTIFICATES SECTION ---
-    const certList = document.getElementById('certificates-list');
-    if (certList && cvData.certificates) {
-        certList.innerHTML = cvData.certificates.map(cert => `
-            <div class="p-4 border border-secondary-200 rounded-lg hover:border-primary-300 hover:shadow-md transition-all group">
-                <div class="flex items-start gap-3">
-                    <i data-feather="award" class="text-primary-400 group-hover:text-primary-600 transition-colors"></i>
+    // 4. Achievements
+    const achList = document.getElementById('achievements-list');
+    cvData.achievements.forEach(ach => {
+        const html = `
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-start gap-4">
+                    <div class="bg-primary-100 p-3 rounded-full">
+                        <i data-feather="${ach.icon}" class="text-primary-600"></i>
+                    </div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 text-sm mb-1">${cert.name}</h4>
-                        <p class="text-xs text-secondary-500 font-medium uppercase tracking-wide">${cert.issuer}</p>
+                        <h3 class="text-xl font-semibold mb-2">${ach.title}</h3>
+                        <p>${ach.description}</p>
                     </div>
                 </div>
             </div>
-        `).join('');
-    }
-
-    // --- 6. CONTACT & INTERESTS ---
-    const contactList = document.getElementById('contact-list');
-    if (contactList) {
-        contactList.innerHTML = `
-            <li><a href="mailto:${cvData.personal.email}" class="flex items-center gap-3 text-secondary-600 hover:text-primary-600 transition-colors"><i data-feather="mail" class="w-5 h-5"></i> ${cvData.personal.email}</a></li>
-            <li><a href="tel:${cvData.personal.phone.replace(/\s/g, '')}" class="flex items-center gap-3 text-secondary-600 hover:text-primary-600 transition-colors"><i data-feather="phone" class="w-5 h-5"></i> ${cvData.personal.phone}</a></li>
-            <li><a href="${cvData.personal.linkedin}" target="_blank" class="flex items-center gap-3 text-secondary-600 hover:text-primary-600 transition-colors"><i data-feather="linkedin" class="w-5 h-5"></i> LinkedIn Profile</a></li>
         `;
+        achList.insertAdjacentHTML('beforeend', html);
+    });
+
+    // 5. Skills 
+    const createBadges = (skills) => skills.map(skill => 
+        `<span class="inline-block bg-gray-50 border border-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 mr-2 mb-2 shadow-sm hover:border-primary-500 hover:text-primary-600 hover:bg-white transition-all cursor-default">
+            ${skill}
+        </span>`
+    ).join('');
+
+    // Render the three categories
+    // We use optional chaining (?.) just in case a category is missing in data.js
+    if (document.getElementById('skills-data')) {
+        document.getElementById('skills-data').innerHTML = createBadges(cvData.skills.dataStack || []);
+    }
+    
+    if (document.getElementById('skills-analytics')) {
+        document.getElementById('skills-analytics').innerHTML = createBadges(cvData.skills.analytics || []);
     }
 
-    const interestsGrid = document.getElementById('interests-grid');
-    if (interestsGrid && cvData.interests) {
-        interestsGrid.innerHTML = cvData.interests.map(interest => `
-            <div class="flex flex-col items-center justify-center p-4 bg-secondary-50 rounded-lg text-center hover:bg-primary-50 transition-colors">
-                <span class="text-sm font-medium text-secondary-700">${interest.name}</span>
+    if (document.getElementById('skills-business')) {
+        document.getElementById('skills-business').innerHTML = createBadges(cvData.skills.business || []);
+    }
+    
+
+    // 6. Certificates
+    const certList = document.getElementById('certificates-list');
+    cvData.certificates.forEach(cert => {
+        const html = `
+            <div class="border border-secondary-200 rounded-lg p-4">
+                <h3 class="text-lg font-semibold mb-2">${cert.name}</h3>
+                <p class="text-secondary-600 mb-2">${cert.issuer}</p>
             </div>
-        `).join('');
-    }
+        `;
+        certList.insertAdjacentHTML('beforeend', html);
+    });
 
-    // --- 7. INITIALIZE ICONS ---
-    if (typeof feather !== 'undefined') {
-        feather.replace();
-    }
-});
+    // 7. Contact Info
+    const contactList = document.getElementById('contact-list');
+    contactList.innerHTML = `
+        <li class="flex items-center gap-3">
+            <i data-feather="mail" class="text-primary-500"></i>
+            <a href="mailto:${cvData.personal.email}" class="hover:text-primary-500 transition-colors">${cvData.personal.email}</a>
+        </li>
+        <li class="flex items-center gap-3">
+            <i data-feather="phone" class="text-primary-500"></i>
+            <a href="tel:${cvData.personal.phone.replace(/\s/g, '')}" class="hover:text-primary-500 transition-colors">${cvData.personal.phone}</a>
+        </li>
+        <li class="flex items-center gap-3">
+            <i data-feather="linkedin" class="text-primary-500"></i>
+            <a href="${cvData.personal.linkedin}" target="_blank" class="hover:text-primary-500 transition-colors">LinkedIn Profile</a>
+        </li>
+    `;
+
+    // 8. Interests
+    const intGrid = document.getElementById('interests-grid');
+    const baseUrl = "";
+    
+    cvData.interests.forEach(int => {
+        const html = `
+            <div class="flex flex-col items-center">
+                <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
+                    <img src="${baseUrl}${int.img}" alt="${int.name}" class="w-6 h-6">
+                </div>
+                <span class="text-sm text-center">${int.name}</span>
+            </div>
+        `;
+        intGrid.insertAdjacentHTML('beforeend', html);
+    });
+}
