@@ -1,52 +1,80 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
+/* --- 1. CORE STYLES --- */
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.8;
     color: #333;
-    background-color: #f9f9f7;
+    
+    /* Modern Background & Font Smoothing */
+    background-color: #f3f4f6; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* Animated Mesh Gradient Background (Replaces old Dot Pattern) */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(14,165,233,0.05) 0%, rgba(255,255,255,0) 70%);
+    z-index: -1;
+    animation: pulse 15s infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Typography Modernization */
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
     font-weight: 600;
+    letter-spacing: -0.02em; 
+    color: #111827; 
 }
 
-/* Smooth scrolling for anchor links */
+/* --- 2. LAYOUT & UTILITIES --- */
 html {
     scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 6px;
 }
-
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #555;
     border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #333;
 }
-/* Animation for sections */
+
+/* Section Animation & Spacing */
 section {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), 
                 transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    margin-bottom: 80px; /* Preserved from old CSS */
 }
 
 section.visible {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* --- 3. COMPONENT STYLES --- */
 
 /* Interest icons */
 .interest-icon {
@@ -58,37 +86,51 @@ section.visible {
     justify-content: center;
     border-radius: 12px;
 }
-
 .interest-icon img {
     width: 28px;
     height: 28px;
     object-fit: contain;
 }
-
 .interest-icon:hover {
     transform: translateY(-5px) scale(1.05);
     background-color: #333 !important;
 }
 
-/* Card styles */
+/* RESTORED: Modern Glassmorphism Card */
+.modern-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+.modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: rgba(14, 165, 233, 0.3);
+}
+
+/* Standard Card Styles */
 .bg-white {
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     border-radius: 12px;
     border: 1px solid rgba(0,0,0,0.05);
 }
-
 .bg-white:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
 }
 
-/* Elegant underline for headings */
+/* Elegant underline */
 .heading-underline {
     position: relative;
     display: inline-block;
     padding-bottom: 8px;
 }
-
 .heading-underline:after {
     content: '';
     position: absolute;
@@ -97,23 +139,4 @@ section.visible {
     width: 60px;
     height: 2px;
     background: #333;
-}
-
-/* Section spacing */
-section {
-    margin-bottom: 80px;
-}
-
-/* Subtle background patterns */
-body:after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
-    pointer-events: none;
-    z-index: -1;
 }
