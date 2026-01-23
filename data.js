@@ -7,8 +7,8 @@ const cvData = {
     personal: {
         name: "Maciej Kwarciany",
         role: " Business Analyst/ Key Account Manager/ Web Traffic SME",
-        heroDescription: "Business-savvy data driven analyst blending strategic thinking with technical expertise. Bridging the gap between strategy and execution in tech-driven environments.",
-        cvPdfUrl: "/assets/Maciej_Kwarciany_CV.pdf", // Update this if filename changes
+        heroDescription: "Business-savvy, data-driven analyst with 6+ years of experience, combining strategic thinking with strong technical expertise, with a proven track record of translating complex data and system behavior into measurable revenue growth.",
+        cvPdfUrl: "/assets/Maciej_Kwarciany_CV.pdf",
         email: "Maciej.Kwarciany@gmail.com",
         phone: "+48600972749",
         linkedin: "https://linkedin.com/in/maciej-kwarciany",
@@ -18,8 +18,8 @@ const cvData = {
     summary: {
         paragraphs: [
 
-            "Business-savvy data driven analyst with a blend of strategic thinker and technical expert. Fluent in SQL, and data analytics yet able to run high impact contract negotiations.",
-            "Bridging the gap between strategy and execution in tech-driven environments. Bringing a holistic approach to problem solving, especially in high-stakes, compliance-sensitive environments."
+            "Data-driven business professional, blend of strategic thinker and technical expert.Skilled at bridging the gap between strategy and execution in technology-driven environments, Fluent in SQL and data analytics yet comfortable with leading high-impact discussions with senior stakeholders and enterprise-scale clients.",
+            "Bringing a holistic approach to problem solving. Acting as a trusted technical advisor, especially in high-stakes, compliance-sensitive environments."
         ],
 
         businessExpertise: "Understanding of market dynamics, financial models, and corporate strategy. Ability to negotiate and close high-impact contracts, ensuring agreements are profitable and aligned with long-term company objectives.",
