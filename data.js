@@ -1,90 +1,135 @@
-/* data.js */
+/* data.js - Edit this file to change your website content */
+
+
 
 const cvData = {
+
     personal: {
         name: "Maciej Kwarciany",
-        role: "Technical Key Account Manager & Data Analyst",
-        heroDescription: "Data-driven professional bridging the gap between commercial strategy and technical execution. Expert in utilizing Python and SQL to uncover revenue opportunities and optimize workflows in high-stakes environments.",
-        cvPdfUrl: "/assets/Maciej_Kwarciany_CV.pdf",
+        role: " Business Analyst/ Key Account Manager/ Web Traffic SME",
+        heroDescription: "Business-savvy data driven analyst blending strategic thinking with technical expertise. Bridging the gap between strategy and execution in tech-driven environments.",
+        cvPdfUrl: "/assets/Maciej_Kwarciany_CV.pdf", // Update this if filename changes
         email: "Maciej.Kwarciany@gmail.com",
-        phone: "+48 600 972 749",
+        phone: "+48600972749",
         linkedin: "https://linkedin.com/in/maciej-kwarciany",
         profileImage: "/assets/profile.jpg"
     },
+
     summary: {
         paragraphs: [
-            "Technical Key Account Manager and Data Analyst with a proven track record of bridging the gap between strategy and execution. I combine commercial acumen with hard technical skills (Python, SQL) to drive revenue and efficiency.",
-            "Experienced in negotiating enterprise-level contracts while simultaneously building custom technical solutions to automate compliance and operational workflows."
+
+            "Business-savvy data driven analyst with a blend of strategic thinker and technical expert. Fluent in SQL, and data analytics yet able to run high impact contract negotiations.",
+            "Bridging the gap between strategy and execution in tech-driven environments. Bringing a holistic approach to problem solving, especially in high-stakes, compliance-sensitive environments."
         ],
-        businessExpertise: "Market dynamics analysis, financial modeling, and corporate strategy. Skilled in negotiating and closing high-impact contracts that align with long-term company objectives.",
-        technicalExpertise: "System architecture and data flow optimization. Ability to assess solution feasibility, troubleshoot technical bottlenecks, and translate business needs into technical requirements."
+
+        businessExpertise: "Understanding of market dynamics, financial models, and corporate strategy. Ability to negotiate and close high-impact contracts, ensuring agreements are profitable and aligned with long-term company objectives.",
+        technicalExpertise: "Knowledge of system architecture and data flows enables discussion of solution feasibility, troubleshooting bottlenecks, and ensuring technical builds align with company vision."
     },
+
     experience: [
+
         {
             company: "Commerce Media Tech (Zeropark)",
             role: "Technical Key Account Manager",
             period: "06.2023 - Present",
+
             description: [
-                "**Engineered a typo-squatting detection tool** using Python (Levenshtein distance algorithm), identifying undervalued inventory and boosting monetization by ~40%.",
-                "**Spearheaded critical data infrastructure migration** for a top-tier client, resolving routing inefficiencies and driving an 85% YoY revenue increase.",
-                "Developed custom **SQL & Tableau dashboards** to visualize real-time KPIs, enabling C-level clients to optimize budget allocation instantly.",
-                "Manage enterprise-level client relationships, negotiating contracts and aligning technical solutions with business goals.",
-                "Partner with cross-functional teams to implement AI-driven tools for web traffic optimization."
+                "Spearheaded a critical migration for a top client, increasing revenue by 85% YoY",
+                "Managed enterprise-level client relationships, driving revenue growth for high-value accounts",
+                "Diagnosed and corrected misconfigured client integrations, driving a 25% revenue uplift over subsequent quarters",
+                "Negotiated contracts and collaborated with C-level stakeholders to align technical solutions with business goals",
+                "Built custom analytics dashboards to track KPIs, enabling clients to scale budgets with real-time decision-making insights",
             ]
         },
+
         {
-            company: "Commerce Media Tech (Zeropark)",
+
+            company: "Codewise Sp. z o.o.",
             role: "Account Manager / Senior Account Manager",
             period: "06.2020 - 05.2023",
+
             description: [
-                "Acted as the primary bridge between commercial clients and engineering teams, translating complex business needs into actionable technical roadmaps.",
-                "**Maintained 95% client retention rate** during a period of rapid portfolio expansion.",
-                "Collaborated with Product teams to prioritize and roadmap high-impact client features.",
-                "Grew portfolio revenue by identifying upsell opportunities through data analysis."
+                "Acted as a bridge between clients and engineering teams, translating business needs into tech requirements",
+                "Collaborated with Product teams to roadmap client-requested features"
             ]
         },
+
         {
-            company: "Commerce Media Tech (Zeropark)",
+            company: "Codewise Sp. z o.o.",
             role: "Content Quality Specialist",
             period: "05.2019 - 04.2020",
+
             description: [
-                "Conducted in-depth audits of ad traffic quality across publisher networks, manually implementing fraud detection measures.",
-                "Developed internal guidelines for traffic filtering and content approval, which were later adopted as the company-wide standard."
+                "Conducted in-depth audits of ad traffic quality across publisher networks, implementing fraud detection measures",
+                "Developed internal guidelines for traffic filtering and content approval later adopted as a company-wide standard"
             ]
         }
     ],
-    // Achievements section merged into Experience for better context
-    achievements: [], 
+
+    achievements: [
+        {
+            title: "Revenue Growth via Data Integrity",
+            icon: "trending-up",
+            description: "Identified and analyzed inconsistencies in web traffic routing from key customer. Rebuilt data flow and tracking logic, resulting in 85% increase in client revenue."
+        },
+
+        {
+            title: "Linguistic Analysis Tool",
+            icon: "cpu",
+            description: "Built validation system to cross-reference millions of domain against brand keywords, accounting for human typing behavior (e.g., keyboard proximity errors) to identify undervalued domains. This automated solution reduced analysis time from days to hours and directly drove a inventory monetization by ~40%."
+        },
+        {
+            title: "Revenue Optimization",
+            icon: "trending-up",
+            description: "Diagnosed and corrected misconfigured client integration using third-party server verification, cutting reported discrepancies by 40pp driving a 25% revenue uplift over subsequent quarters."
+        },
+        {
+            title: "Process Innovation",
+            icon: "zap",
+            description: "Developed and introduced multiple MVP solutions that were later implemented company-wide, improving internal processes efficiency & reducing workload."
+        },
+
+        {
+            title: "Volunteer Leadership",
+            icon: "users",
+            description: "Head Event Coordinator for \"Kraków Mountain Festival\", managing event operations, volunteer workflow, and equipment delivery coordination."
+        }
+    ],
+
     skills: {
-        // Changed to simple lists to avoid arbitrary "66/10" ratings
-        technical: [
-            "Python (Pandas, NumPy)",
-            "SQL (PostgreSQL)",
-            "AWS Athena",
-            "Advanced Excel (VBA/Macros)",
-            "System Architecture"
+
+        dataStack: [
+            "SQL (PostgreSQL, AWS Athena)", "Python (Pandas, NumPy)", "Cloud Computing (VM/EC2)", "API Integrations" ,"Generative AI & LLMs", "Advanced Excel"
         ],
-        analytical: [
-            "Web Traffic Analysis",
-            "Data Auditing & Fraud Detection",
-            "Google Analytics",
-            "Cloud Computing",
-            "Tableau / Data Viz"
+
+        analytics: [
+            "Google Analytics", "Power BI", "Data Visualization", "Web Traffic Analysis", "Fraud Detection", "Jira/ Asana/ Confluence"
+        ],
+
+        business: [
+            "MVP Development","Stakeholder Management", "Contract Negotiation", "Process Automation",
+            "Strategic Planning", "Revenue Optimization"
         ]
     },
+
     certificates: [
-        { name: "Python for Data Science, AI & Development", issuer: "IBM | 2025" },
-        { name: "Data Analysis with Python", issuer: "IBM | 2025" },
-        { name: "Databases and SQL for Data Science", issuer: "IBM | 2025" },
-        { name: "Generative AI Agents with Vertex AI", issuer: "Google Cloud | 2025" },
-        { name: "Open Source Intelligence (OSINT)", issuer: "Niebezpiecznik.pl | 2021" }
+
+        { name: "Python for Data Science, AI & Development", issuer: "IBM | Oct 2025" },
+        { name: "Data Analysis with Python", issuer: "IBM | Sep 2025" },
+        { name: "Databases and SQL for Data Science", issuer: "IBM | Aug 2025" },
+        { name: "Generative AI Agents with Vertex AI", issuer: "Google Cloud | Feb 2025" },
+        { name: "ChatGPT & Zapier: Agentic AI", issuer: "Vanderbilt University | Feb 2025" },
+        { name: "Open Source Intelligence (OSINT)", issuer: "Niebezpiecznik.pl | Jun 2021" }
     ],
+
     interests: [
-        { name: "Brewing", img: "Brewing.png" },
-        { name: "Diving", img: "Diving.png" },
-        { name: "Mountains", img: "Mountains.png" },
-        { name: "Travel", img: "Travel.png" },
-        { name: "Sailing", img: "Sailing.png" },
-        { name: "Climbing", img: "Climbing.png" }
+        { name: "Scuba-Diving", img: "/assets/Diving.png" },
+        { name: "Mountains", img: "/assets/Mountains.png" },
+        { name: "Cooking", img: "/assets/Cooking.png" },
+        { name: "Sailing", img: "/assets/Sailing.png" },
+        { name: "Climbing", img: "/assets/Climbing.png" },
+        { name: "Reading", img: "/assets/Reading.png" },
+        { name: "Cinema", img: "/assets/Cinema.png" }
     ]
+
 };
