@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Technical Key Account Manager & Data Analyst. Bridging the gap between strategy and execution.">
-    <title>Maciej Kwarciany | Data Scientist & Technical Account Manager</title>
+    <title>Maciej Kwarciany | Data Alchemist</title>
     <meta property="og:title" content="Maciej Kwarciany | Data Alchemist">
     <meta property="og:description" content="Technical Key Account Manager & Data Analyst">
     <meta property="og:type" content="website">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -24,10 +26,13 @@
             }
         }
     </script>
+
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
     <custom-navbar></custom-navbar>
-    
+
+   
+
     <main class="container mx-auto px-4 py-12 max-w-6xl">
         <section class="mb-20">
             <div class="flex flex-col md:flex-row items-center gap-8">
@@ -36,9 +41,10 @@
                         <img id="hero-img" src="" alt="Profile" class="w-full h-auto">
                     </div>
                 </div>
+
                 <div class="md:w-2/3">
-                    <h1 id="hero-name" class="text-5xl md:text-6xl font-bold mb-4 text-gray-900"></h1>
-                    <h2 id="hero-role" class="text-2xl md:text-3xl font-medium mb-6 text-gray-600 tracking-wide"></h2>
+                    <h1 id="hero-name" class="text-6xl md:text-7xl font-bold mb-4 text-gray-900"></h1>
+                    <h2 id="hero-role" class="text-2xl md:text-2xl font-medium mb-6 text-gray-600 tracking-wide"></h2>
                     <p id="hero-desc" class="text-lg mb-6"></p>
                     <div class="flex flex-wrap gap-4" id="hero-buttons">
                         </div>
@@ -46,26 +52,30 @@
             </div>
         </section>
 
+
+
         <section id="summary" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Personal Summary</h2>
-            <div class="bg-white p-8 rounded-xl shadow-sm">
-                <div id="summary-text" class="mb-4 text-lg leading-relaxed"></div>
-                <div class="grid md:grid-cols-2 gap-8 mt-8">
-                    <div class="bg-primary-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-3 text-secondary-800 flex items-center gap-2">
-                            <i data-feather="dollar-sign" class="text-primary-600"></i> Business Expertise
+            <div class="modern-card p-8">
+                <div id="summary-text" class="mb-4"></div>
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-secondary-700 flex items-center gap-2">
+                            <i data-feather="dollar-sign" class="text-primary-500"></i> Business Expertise
                         </h3>
-                        <p id="summary-business" class="text-secondary-700"></p>
+                        <p id="summary-business"></p>
                     </div>
-                    <div class="bg-secondary-100 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-3 text-secondary-800 flex items-center gap-2">
-                            <i data-feather="code" class="text-primary-600"></i> Technical Expertise
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-secondary-700 flex items-center gap-2">
+                            <i data-feather="code" class="text-primary-500"></i> Technical Expertise
                         </h3>
-                        <p id="summary-tech" class="text-secondary-700"></p>
+                        <p id="summary-tech"></p>
                     </div>
                 </div>
             </div>
         </section>
+
+
 
         <section id="experience" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Professional Experience</h2>
@@ -73,93 +83,92 @@
                 </div>
         </section>
 
+
+
+        <section id="achievements" class="mb-24">
+            <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Key Achievements</h2>
+            <div id="achievements-list" class="grid md:grid-cols-2 gap-6">
+                 </div>
+        </section>
+
+
+
         <section id="skills" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Skills</h2>
-            <div class="bg-white rounded-xl shadow-md p-8">
-                <div class="grid md:grid-cols-2 gap-12">
+            <div class="modern-card p-6"> 
+            <div class="grid md:grid-cols-3 gap-6">
                     <div>
-                        <h3 class="text-2xl font-semibold mb-6 flex items-center gap-2">
-                            <i data-feather="terminal" class="text-primary-500"></i> Technical
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i data-feather="database" class="text-primary-500 w-5 h-5"></i> Data Stack
                         </h3>
-                        <div id="skills-tech-tags" class="flex flex-wrap gap-2"></div>
+                        <div id="skills-data" class="flex flex-wrap"></div>
                     </div>
+
                     <div>
-                        <h3 class="text-2xl font-semibold mb-6 flex items-center gap-2">
-                            <i data-feather="bar-chart-2" class="text-primary-500"></i> Analytical
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i data-feather="bar-chart-2" class="text-primary-500 w-5 h-5"></i> Analytics
                         </h3>
-                        <div id="skills-analytical-tags" class="flex flex-wrap gap-2"></div>
+                        <div id="skills-analytics" class="flex flex-wrap"></div>
                     </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i data-feather="briefcase" class="text-primary-500 w-5 h-5"></i> Business
+                        </h3>
+                    <div id="skills-business" class="flex flex-wrap"></div>
                 </div>
+            </div>
             </div>
         </section>
 
+
+
         <section id="certificates" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Certificates</h2>
-            <div class="bg-white rounded-xl shadow-md p-6">
+            <div class="modern-card p-6">
                 <div id="certificates-list" class="grid md:grid-cols-3 gap-6">
                     </div>
             </div>
         </section>
 
+        </section>
+
+        <section id="interests" class="mb-24">
+            <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Personal Interests</h2>
+            <div class="modern-card p-6">
+                 <div id="interests-grid" class="flex flex-wrap justify-between items-center w-full">
+                 </div>
+            </div>
+        </section>
+
+
         <section id="contact" class="mb-24">
             <h2 class="text-4xl font-bold mb-8 text-gray-900 heading-underline">Get In Touch</h2>
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-8">
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <div>
-                            <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-                            <ul id="contact-list" class="space-y-4">
-                                </ul>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-6 flex items-center gap-2">
-                                <i data-feather="heart" class="text-primary-500"></i>
-                                Personal Interests
-                            </h3>
-                            <div id="interests-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                </div>
-                        </div>
+            <div class="modern-card overflow-hidden">
+                <div class="p-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                        <ul id="contact-list" class="flex flex-col md:flex-row flex-wrap gap-8">
+                            </ul>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <custom-footer></custom-footer>
 
+
+
     <script src="data.js"></script>
+
     <script src="components/navbar.js" defer></script>
+
     <script src="components/footer.js" defer></script>
+
     <script src="script.js" defer></script>
 
-    <script id="render-fix">
-        // This script ensures the skills render as Tags (no bars) 
-        // regardless of what the old script.js tries to do.
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                const renderTags = (data, elementId) => {
-                    const container = document.getElementById(elementId);
-                    if (!container || !data) return;
-                    container.innerHTML = ''; // Clear anything script.js might have added
-                    
-                    data.forEach(skillName => {
-                        const tag = document.createElement('span');
-                        tag.className = 'px-4 py-2 bg-primary-100 text-primary-800 rounded-lg text-sm font-medium border border-primary-200 shadow-sm hover:bg-primary-200 transition-colors';
-                        tag.textContent = skillName;
-                        container.appendChild(tag);
-                    });
-                };
-
-                // Render skills using the new array format from data.js
-                if(typeof cvData !== 'undefined') {
-                    renderTags(cvData.skills.technical, 'skills-tech-tags');
-                    renderTags(cvData.skills.analytical, 'skills-analytical-tags');
-                    
-                    // Re-trigger Feather icons just in case
-                    if(typeof feather !== 'undefined') feather.replace();
-                }
-            }, 100); // Slight delay to override main script
-        });
-    </script>
 </body>
+
 </html>
