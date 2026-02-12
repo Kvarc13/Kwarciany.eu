@@ -1,12 +1,12 @@
 /* script.js */
 
 document.addEventListener('DOMContentLoaded', function() {
-    renderContent();
+    if (typeof cvData !== 'undefined') {
+        renderContent();
+    }
     
-    // Initialize Feather icons after content is loaded
     feather.replace();
     
-    // Intersection Observer for animations
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sections.forEach(section => observer.observe(section));
 
-    // Smooth scroll offset logic
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -35,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function renderContent() {
-    // 1. Hero
+    // 1. Hero - Joined the array sentences
     document.getElementById('hero-img').src = cvData.personal.profileImage;
     document.getElementById('hero-name').textContent = cvData.personal.name;
     document.getElementById('hero-role').textContent = cvData.personal.role;
-    document.getElementById('hero-desc').textContent = cvData.personal.heroDescription;
+    document.getElementById('hero-desc').textContent = cvData.personal.heroDescription.join(' ');
     
     const heroBtns = document.getElementById('hero-buttons');
     heroBtns.innerHTML = `
@@ -56,6 +55,7 @@ function renderContent() {
 
     // 2. Summary
     const summaryDiv = document.getElementById('summary-text');
+    summaryDiv.innerHTML = ''; // Clear existing
     cvData.summary.paragraphs.forEach(p => {
         const pTag = document.createElement('p');
         pTag.className = "mb-4";
@@ -67,6 +67,7 @@ function renderContent() {
 
     // 3. Experience
     const expList = document.getElementById('experience-list');
+    expList.innerHTML = '';
     cvData.experience.forEach(job => {
         const html = `
             <div class="bg-white rounded-xl shadow-md overflow-hidden">
@@ -91,6 +92,7 @@ function renderContent() {
 
     // 4. Achievements
     const achList = document.getElementById('achievements-list');
+    achList.innerHTML = '';
     cvData.achievements.forEach(ach => {
         const html = `
             <div class="bg-white rounded-xl shadow-md p-6">
@@ -115,23 +117,19 @@ function renderContent() {
         </span>`
     ).join('');
 
-    // Render the three categories
-    // We use optional chaining (?.) just in case a category is missing in data.js
     if (document.getElementById('skills-data')) {
         document.getElementById('skills-data').innerHTML = createBadges(cvData.skills.dataStack || []);
     }
-    
     if (document.getElementById('skills-analytics')) {
         document.getElementById('skills-analytics').innerHTML = createBadges(cvData.skills.analytics || []);
     }
-
     if (document.getElementById('skills-business')) {
         document.getElementById('skills-business').innerHTML = createBadges(cvData.skills.business || []);
     }
-    
 
     // 6. Certificates
     const certList = document.getElementById('certificates-list');
+    certList.innerHTML = '';
     cvData.certificates.forEach(cert => {
         const html = `
             <div class="border border-secondary-200 rounded-lg p-4">
@@ -142,32 +140,23 @@ function renderContent() {
         certList.insertAdjacentHTML('beforeend', html);
     });
 
-    // 7. Contact Info
+    // 7. Contact Info - Loop through the new array format
     const contactList = document.getElementById('contact-list');
-    contactList.innerHTML = `
+    contactList.innerHTML = cvData.contact.map(contact => `
         <li class="flex items-center gap-3">
-            <i data-feather="mail" class="text-primary-500"></i>
-            <a href="mailto:${cvData.personal.email}" class="hover:text-primary-500 transition-colors">${cvData.personal.email}</a>
+            <i data-feather="${contact.icon}" class="text-primary-500"></i>
+            <a href="${contact.link}" ${contact.link.startsWith('http') ? 'target="_blank"' : ''} class="hover:text-primary-500 transition-colors">${contact.value}</a>
         </li>
-        <li class="flex items-center gap-3">
-            <i data-feather="phone" class="text-primary-500"></i>
-            <a href="tel:${cvData.personal.phone.replace(/\s/g, '')}" class="hover:text-primary-500 transition-colors">${cvData.personal.phone}</a>
-        </li>
-        <li class="flex items-center gap-3">
-            <i data-feather="linkedin" class="text-primary-500"></i>
-            <a href="${cvData.personal.linkedin}" target="_blank" class="hover:text-primary-500 transition-colors">LinkedIn Profile</a>
-        </li>
-    `;
+    `).join('');
 
     // 8. Interests
     const intGrid = document.getElementById('interests-grid');
-    const baseUrl = "";
-    
+    intGrid.innerHTML = '';
     cvData.interests.forEach(int => {
         const html = `
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center p-4">
                 <div class="interest-icon bg-primary-100 p-3 rounded-full mb-2">
-                    <img src="${baseUrl}${int.img}" alt="${int.name}" class="w-6 h-6">
+                    <img src="${int.img}" alt="${int.name}" class="w-6 h-6">
                 </div>
                 <span class="text-sm text-center">${int.name}</span>
             </div>
