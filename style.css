@@ -1,18 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
-/* --- 1. CORE STYLES --- */
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.8;
     color: #333;
-    
-    /* Modern Background & Font Smoothing */
-    background-color: #f3f4f6; 
+    background-color: #f8fafc; 
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Animated Mesh Gradient Background (Replaces old Dot Pattern) */
+/* Background Animation */
 body::before {
     content: '';
     position: fixed;
@@ -20,53 +16,26 @@ body::before {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(14,165,233,0.05) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle, rgba(14,165,233,0.03) 0%, rgba(255,255,255,0) 70%);
     z-index: -1;
-    animation: pulse 15s infinite;
+    animation: pulse 20s infinite linear;
     pointer-events: none;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.05); }
+    100% { transform: rotate(360deg) scale(1); }
 }
 
-/* Typography Modernization */
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    letter-spacing: -0.02em; 
-    color: #111827; 
 }
 
-/* --- 2. LAYOUT & UTILITIES --- */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #333;
-}
-
-/* Section Animation & Spacing */
 section {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), 
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    margin-bottom: 80px; /* Preserved from old CSS */
+    transform: translateY(20px);
+    transition: all 0.7s ease-out;
 }
 
 section.visible {
@@ -74,69 +43,34 @@ section.visible {
     transform: translateY(0);
 }
 
-/* --- 3. COMPONENT STYLES --- */
-
-/* Interest icons */
-.interest-icon {
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-}
-.interest-icon img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-}
-.interest-icon:hover {
-    transform: translateY(-5px) scale(1.05);
-    background-color: #333 !important;
-}
-
-/* RESTORED: Modern Glassmorphism Card */
 .modern-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
-                0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    border-radius: 16px;
-    transition: all 0.3s ease;
-}
-.modern-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
-                0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border-color: rgba(14, 165, 233, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
 }
 
-/* Standard Card Styles */
-.bg-white {
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.05);
-}
-.bg-white:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
-}
-
-/* Elegant underline */
 .heading-underline {
     position: relative;
-    display: inline-block;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
 }
+
 .heading-underline:after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
-    height: 2px;
-    background: #333;
+    width: 50px;
+    height: 4px;
+    background: #0ea5e9;
+    border-radius: 2px;
+}
+
+.interest-icon {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.interest-icon:hover {
+    transform: translateY(-8px);
 }
