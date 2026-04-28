@@ -4,7 +4,7 @@ const cvData = {
     personal: {
         name: "Maciej Kwarciany",
         role: "Senior Business Analyst/ Web Traffic SME",
-        heroDescription: ["Business-savvy, data-driven analyst with 6+ years of experience."," Combining strategic thinking with strong technical expertise, with a proven track record of translating complex data and system behavior into measurable revenue growth."],
+        heroDescription: ["Business-savvy, data-driven analyst with 6+ years of experience."," Combining strategic thinking with strong technical expertise, with a proven track record of translating complex data and system behavior into measurable revenue growth. Transitioning from traditional data analysis to building production-grade solutions."],
         cvPdfUrl: "/assets/Maciej_Kwarciany_CV.pdf",
         profileImage: "/assets/profile.jpg",
     },
@@ -39,11 +39,11 @@ const cvData = {
 
     summary: {
         paragraphs: [
-            "Data-driven business professional, blend of strategic thinker and technical expert. Skilled at bridging the gap between strategy and execution in technology-driven environments. Fluent in SQL and data analytics yet comfortable with leading high-impact discussions with senior stakeholders and enterprise-scale clients.",
-            "Bringing a holistic approach to problem solving. Acting as a trusted technical advisor, especially in high-stakes, compliance-sensitive environments."
+            "Data-driven business professional, blend of strategic thinker and technical expert. Skilled at bridging the gap between business strategy and technical execution in data-driven environments. Fluent in SQL and data analytics yet comfortable with leading high-impact discussions with senior stakeholders and enterprise-scale clients.",
+            "Bringing a holistic approach to problem solving. Acting as a trusted technical advisor, especially in high-stakes, compliance-sensitive environments where I prototype solutions, not just specify them"
         ],
         businessExpertise: "Understanding of market dynamics, financial models, and corporate strategy. Ability to negotiate and close high-impact contracts, ensuring agreements are profitable and aligned with long-term company objectives.",
-        technicalExpertise: "Knowledge of system architecture and data flows enables discussion of solution feasibility, troubleshooting bottlenecks, and ensuring technical builds align with company vision."
+        technicalExpertise: "Hands-on experience with systems architecture and data flows enables me to discuss the feasibility of solution options, troubleshoot bottlenecks, and ensure technical builds align with company vision."
     },
 
     experience: [
@@ -52,8 +52,9 @@ const cvData = {
             role: "Senior Business Analyst",
             period: "12.2025 - Present",
             description: [
+                "Architected a production-grade AI Reporting Bot on AWS serverless (Lambda, SAM, DynamoDB) integrated with Anthropic LLM API — enabling non-technical stakeholders to run complex SQL analysis via Slack, cutting reporting latency from hours to minutes and saving ~12h/week at ~$4/month cloud cost.",
                 "Spearheaded critical infrastructure changes for Key client (40% company revenue) resulting in a sustainable 85% YoY revenue increase.",
-                "Technical Lead of Asana, Jira, Slack and Microsoft ecosystems migration, use of in-house methodologies delivered $75k+ operational savings.",
+                "Technical Lead of Asana, Jira, Slack and Microsoft ecosystems migration. Migration ran fully in-house provided $25k+ operational savings.",
                 "Developed number of MVP solutions and automations, now integrated into the core product infrastructure, improving scalability and reducing workload."
             ]
         },
@@ -116,9 +117,9 @@ const cvData = {
             description: "Diagnosed and corrected misconfigured client integration using third-party server verification, cutting reported discrepancies by 40pp driving a 25% revenue uplift."
         },
         {
-            title: "Process Innovation",
+            title: "Scaling up via Process Innovation",
             icon: "zap",
-            description: "Developed and introduced multiple MVP solutions that were later implemented company-wide, improving internal processes efficiency."
+            description: "Built a brand intelligence pipeline 3-step web crawler (Playwright + AWS Athena/Common Crawl + Wayback Machine) with LLM based keyword enrichment, that generates brand-related keywords at scale — expanding advertiser bidding inventory and replacing manual research that previously capped throughput at ~10 brands. Now runs across thousands."
         },
         {
             title: "Volunteer Leadership",
@@ -128,9 +129,9 @@ const cvData = {
     ],
 
     skills: {
-        dataStack: ["SQL (PostgreSQL, AWS Athena)", "Python (Pandas, NumPy)", "Cloud Computing (VM/EC2)", "API Integrations" ,"Generative AI & LLMs", "Advanced Excel"],
-        analytics: ["Google Analytics", "Power BI", "Data Visualization", "Web Traffic Analysis", "Fraud Detection", "Jira", "Asana", "Confluence"],
-        business: ["MVP Development","Stakeholder Management", "Contract Negotiation", "Process Automation", "Revenue Optimization"]
+        dataStack: ["AWS Serverless (Lambda, S3, EventBridge, API Gateway)", "SQL (PostgreSQL, AWS Athena)", "Python (Pandas, NumPy)", "API Integrations (REST APIs & Webhooks)", "Web Scraping (Playwright, BeautifulSoup, Common Crawl)", "Generative LLM & Agent Systems", "Prompt Engineering", "Advanced Excel"],
+        analytics: ["Google Analytics", "Power BI", "Custom KPI Dashboards (SQL + Python)", "Data Visualization", "Web Traffic Analysis", "Fraud Detection", "Jira", "Asana", "Confluence"],
+        business: ["MVP Development","Stakeholder Management", "Technical ↔ Business Translation", "Contract Negotiation", "Process Automation", "Revenue Optimization"]
     },
 
     certificates: [
