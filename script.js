@@ -127,7 +127,29 @@ function renderContent() {
         document.getElementById('skills-business').innerHTML = createBadges(cvData.skills.business || []);
     }
 
-    // 6. Certificates
+
+
+// 6. Education ---
+    const eduList = document.getElementById('education-list');
+    if (eduList && cvData.education) {
+        eduList.innerHTML = cvData.education.map(edu => `
+            <div class="bg-white rounded-xl shadow-md p-6 print-avoid-break mb-6 last:mb-0">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-primary-700">${edu.degree}</h3>
+                        <p class="text-secondary-600 font-medium text-lg">${edu.school}</p>
+                    </div>
+                    <div class="mt-2 md:mt-0">
+                        <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">
+                            ${edu.period}
+                        </span>
+                    </div>
+                </div>
+                ${edu.description ? `<p class="mt-3 text-gray-700 leading-relaxed">${edu.description}</p>` : ''}
+            </div>
+        `).join('');
+    }
+    // 7. Certificates
     const certList = document.getElementById('certificates-list');
     certList.innerHTML = '';
     cvData.certificates.forEach(cert => {
@@ -140,7 +162,7 @@ function renderContent() {
         certList.insertAdjacentHTML('beforeend', html);
     });
 
-    // 7. Contact Info - Loop through the new array format
+    // 8. Contact Info - Loop through the new array format
     const contactList = document.getElementById('contact-list');
     contactList.innerHTML = cvData.contact.map(contact => `
         <li class="flex items-center gap-3">
@@ -149,7 +171,7 @@ function renderContent() {
         </li>
     `).join('');
 
-    // 8. Interests
+    // 9. Interests
     const intGrid = document.getElementById('interests-grid');
     intGrid.innerHTML = '';
     cvData.interests.forEach(int => {
