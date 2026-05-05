@@ -129,10 +129,50 @@ const cvData = {
     ],
 
     skills: {
-        dataStack: ["AWS Serverless (Lambda, S3, EventBridge, API Gateway)", "SQL (PostgreSQL, AWS Athena)", "Python (Pandas, NumPy)", "API Integrations (REST APIs & Webhooks)", "Web Scraping (Playwright, BeautifulSoup, Common Crawl)", "Generative LLM & Agent Systems", "Prompt Engineering", "Advanced Excel"],
-        analytics: ["Google Analytics", "Power BI", "Custom KPI Dashboards (SQL + Python)", "Data Visualization", "Web Traffic Analysis", "Fraud Detection", "Jira", "Asana", "Confluence"],
-        business: ["MVP Development","Stakeholder Management", "Technical ↔ Business Translation", "Contract Negotiation", "Process Automation", "Revenue Optimization"]
+        dataStack: [
+            "AWS Serverless (AWS Lambda, API Gateway)",
+            "Event-driven architecture (EventBridge)",
+            "Infrastructure as Code (AWS SAM, CloudFormation)",
+            "API Integrations (REST APIs & Webhooks)",
+            "Web Scraping (Playwright, BeautifulSoup, Common Crawl)",
+            "AI-augmented analytics & LLM-powered enrichment pipelines",
+            "LLM agent design(Anthropic Claude SDK)",
+            "Prompt Engineering", 
+
+        ],
+        
+        analytics: [
+            "BI & dashboards (Power BI, Google Analytics)",
+            "SQL (PostgreSQL, AWS Athena, DuckDB)",
+            "Python (Pandas, NumPy)",
+            "Data storage & processing (S3, Athena)",
+            "Advanced Excel (Power Query, pivot tables, nested formulas)",
+            "Web Traffic Analysis (source validation, fraud detection)",
+            "Ad-tech domain expertise (RTB, attribution, traffic quality)",
+        ],
+        business: [
+            "MVP development & rapid prototyping",
+            "Technical ↔ Business Translation", 
+            "Revenue optimization & data-driven decision making",
+            "Enterprise account ownership",
+            "Cross-functional tooling (Jira, Asana, Confluence, Slack)",
+            "Workflow & Process Automation",
+            "Cohort & retention analytics (churn modeling)"
+        ]
     },
+
+education: [
+        {
+            degree: "MA, Marketing and Market Communication; Product Management",
+            school: "Cracow University of Economics",
+            period: "2014 - 2016"
+        },
+        {
+            degree: "BA, English Philology; English in Business Administration",
+            school: "Andrzej Frycz Modrzewski Krakow University",
+            period: "2011 - 2014"
+        }
+    ],
 
     certificates: [
         { name: "Python for Data Science, AI & Development", issuer: "IBM | Oct 2025" },
