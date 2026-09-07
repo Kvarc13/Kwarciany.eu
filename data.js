@@ -1,10 +1,11 @@
 /* data.js - Edit this file to change your website content */
+/* Wersja PRINT dopasowana pod: Senior Growth Analyst – Spark (Readdle) */
 
 const cvData = {
     personal: {
         name: "Maciej Kwarciany",
-        role: "Senior Business Analyst/ Web Traffic SME",
-        heroDescription: ["Business-savvy, data-driven analyst with 6+ years of experience."," Combining strategic thinking with strong technical expertise, with a proven track record of translating complex data and system behavior into measurable revenue growth. Transitioning from traditional data analysis to building production-grade solutions."],
+        role: "Senior Data & Growth Analyst/ Web Traffic SME",
+        heroDescription: ["Business-savvy, data-driven analyst with 6+ years of experience.", " Combining strategic thinking with strong technical expertise, with a proven track record of translating complex data and user behavior into measurable revenue growth. Building production-grade, self-serve analytics solutions end-to-end."],
         cvPdfUrl: "/assets/Maciej_Kwarciany_CV.pdf",
         profileImage: "/assets/profile.jpg",
     },
@@ -21,7 +22,7 @@ const cvData = {
             icon: "phone" 
         },
         { 
-            value: "LinkedIn", 
+            value: "linkedin.com/in/maciej-kwarciany", 
             link: "https://linkedin.com/in/maciej-kwarciany", 
             icon: "linkedin" 
         },
@@ -29,6 +30,11 @@ const cvData = {
             value: "kwarciany.eu", 
             link: "https://kwarciany.eu", 
             icon: "globe" 
+        },
+        { 
+            value: "github.com/Kvarc13", 
+            link: "https://github.com/Kvarc13", 
+            icon: "github" 
         },
         { 
             value: "Kraków, Poland", 
@@ -39,11 +45,11 @@ const cvData = {
 
     summary: {
         paragraphs: [
-            "Data-driven business professional, blend of strategic thinker and technical expert. Skilled at bridging the gap between business strategy and technical execution in data-driven environments. Fluent in SQL and data analytics yet comfortable with leading high-impact discussions with senior stakeholders and enterprise-scale clients.",
-            "Bringing a holistic approach to problem solving. Acting as a trusted technical advisor, especially in high-stakes, compliance-sensitive environments where I prototype solutions, not just specify them"
+            "Data-driven business professional, blend of strategic thinker and technical expert. Skilled at turning raw data into a reliable source of truth for revenue and growth decisions. Fluent in SQL and data analytics yet comfortable with leading high-impact discussions with senior stakeholders and enterprise-scale clients.",
+            "Bringing a holistic approach to problem solving. Acting as a trusted analytical partner to product, marketing and engineering teams — proactively surfacing insights and opportunities, and shipping the self-serve tools that make them measurable."
         ],
-        businessExpertise: "Understanding of market dynamics, financial models, and corporate strategy. Ability to negotiate and close high-impact contracts, ensuring agreements are profitable and aligned with long-term company objectives.",
-        technicalExpertise: "Hands-on experience with systems architecture and data flows enables me to discuss the feasibility of solution options, troubleshoot bottlenecks, and ensure technical builds align with company vision."
+        businessExpertise: "Understanding of market dynamics, monetization models, and corporate strategy. Proven ability to identify growth opportunities in data and turn them into initiatives with measurable revenue impact.",
+        technicalExpertise: "Hands-on experience with data pipelines, cloud warehouses and event-level web traffic enables me to design measurement systems, ensure data integrity across tools, and validate the impact of initiatives end-to-end."
     },
 
     experience: [
@@ -52,10 +58,11 @@ const cvData = {
             role: "Senior Business Analyst",
             period: "12.2025 - Present",
             description: [
-                "Architected a production-grade AI Reporting Bot on AWS serverless (Lambda, SAM, DynamoDB) integrated with Anthropic LLM API — enabling non-technical stakeholders to run complex SQL analysis via Slack, cutting reporting latency from hours to minutes and saving ~12h/week at ~$4/month cloud cost.",
-                "Spearheaded critical infrastructure changes for Key client (40% company revenue) resulting in a sustainable 85% YoY revenue increase.",
-                "Technical Lead of Asana, Jira, Slack and Microsoft ecosystems migration. Migration ran fully in-house provided $25k+ operational savings.",
-                "Developed number of MVP solutions and automations, now integrated into the core product infrastructure, improving scalability and reducing workload."
+                "Architected a production-grade Claude LLM assisted self-serve analytics platform on AWS serverless (Lambda, MCP, DuckDB) — enabling non-technical stakeholders run complex analysis using natural language, cutting time-to-insight from days to minutes.",
+                "Democratised data access across the organisation with a company-wide BI pipeline platform (Lambda, EventBridge, DuckDB) that replaced manual, multi-step report assembly with fully automated — covering every data source (Redshift, PostgreSQL, external APIs, SharePoint); new reports ship in hours not days. User no longer need to know Python or AWS infrastructure, just SQL.",
+                "Scaled an LLM-powered brand-intelligence engine that turns mistyped-domain traffic into ready-to-launch advertiser offers — expanding coverage from ~10 manually researched brands to thousands (14.8M inventory domains scanned in minutes)",
+                "Spearheaded critical infrastructure changes for Key client (40% company revenue) resulting in a sustainable 85% YoY revenue uplift.",
+                "Technical Lead of Asana, Jira, Slack ecosystems migration. Migration ran fully in-house provided $25k+ operational savings."
             ]
         },
         {
@@ -64,8 +71,8 @@ const cvData = {
             period: "05.2025 - 11.2025",
             description: [
                 "Diagnosed and corrected misconfigured client integration, reducing data discrepancy by 20pp subsequently driving a 25% revenue uplift over next quarters.",
-                "Engineered data-driven margin optimization that boosted profitability by 12% while maintaining competitive pricing.",
-                "Architected custom real-time KPI dashboards using SQL and Python to simplify decision-making.",
+                "Engineered data-driven pricing and margin optimization that boosted profitability by 12% while maintaining competitive positioning.",
+                "Architected self-serve, real-time KPI dashboards using SQL and Python, enabling stakeholders to answer key questions without analyst involvement.",
             ],
         },
         {
@@ -73,10 +80,9 @@ const cvData = {
             role: "Technical Key Account Manager",
             period: "06.2023 - 04.2025",
             description: [
-                "Architected a proprietary Python matching engine to detect brand-related domain typos increasing inventory monetization by 20%.",
+                "Planned and implemented a proprietary Python matching engine to detect brand-related domain typos, increasing inventory monetization by 20%.",
+                "Analyzed user acquisition funnels and traffic quality across sources, surfacing insights that shaped client bidding and budget strategy.",
                 "Acted as the primary technical liaison between C-suite stakeholders and engineering teams to roadmap high-priority product features.",
-                "Managed enterprise-level client relationships, driving revenue growth for high-value accounts.",
-                "Negotiated contracts and collaborated with C-level stakeholders to align technical solutions with business goals.",
                 "Built custom analytics dashboards to track KPIs, enabling clients to scale budgets with real-time decision-making insights.",
             ]
         },
@@ -102,24 +108,29 @@ const cvData = {
 
     achievements: [
         {
+            title: "Self-Serve Analytics Platform",
+            icon: "message-circle",
+            description: "Built a conversational reporting platform (Claude + MCP) on fully serverless AWS — OAuth-secured, with read-only SQL over an S3 data lake and one-click CSV exports. Established a source of truth stakeholders query themselves, cutting time-to-insight from days to minutes."
+        },
+        {
             title: "Revenue Growth via Data Integrity",
             icon: "trending-up",
             description: "Identified and analyzed inconsistencies in web traffic routing from key customer. Rebuilt data flow and tracking logic, resulting in 85% increase in client revenue."
         },
         {
-            title: "Linguistic Analysis Tool",
-            icon: "cpu",
-            description: "Built validation system to cross-reference millions of domain against brand keywords. This automated solution reduced analysis time from days to hours and directly drove inventory monetization increase by ~20%."
-        },
-        {
-            title: "Revenue Optimization",
-            icon: "trending-up",
+            title: "Revenue Optimization via Client Integration Fixes",
+            icon: "check-circle",
             description: "Diagnosed and corrected misconfigured client integration using third-party server verification, cutting reported discrepancies by 40pp driving a 25% revenue uplift."
         },
         {
-            title: "Scaling up via Process Innovation",
-            icon: "zap",
-            description: "Built a brand intelligence pipeline 3-step web crawler (Playwright + AWS Athena/Common Crawl + Wayback Machine) with LLM based keyword enrichment, that generates brand-related keywords at scale — expanding advertiser bidding inventory and replacing manual research that previously capped throughput at ~10 brands. Now runs across thousands."
+            title: "Brand Intelligence Engine",
+            icon: "cpu",
+            description: "Built a brand intelligence pipeline: 3-step web crawler (Playwright + AWS Athena/Common Crawl + Wayback Machine) with LLM-based keyword enrichment, gated by human-labeled precision evalslution. Replaced manual research capped at ~100 brands that now runs across thousands with minimal human oversight."
+        },
+        {
+            title: "Zero-Maintenance BI Pipelines",
+            icon: "layers",
+            description: "Replaced per-report scripts with one shared pipeline engine where each report is a single YAML config. New reports ship in hours not days. Lowered technical overhead to prepare new reports to minimal levels AWS infra & python are no longer required Simple SQL is sufficient."
         },
         {
             title: "Volunteer Leadership",
@@ -129,35 +140,37 @@ const cvData = {
     ],
 
     skills: {
+        analytics: [
+            "SQL (PostgreSQL, Redshift, AWS Athena, DuckDB)",
+            "BI & dashboards (Power BI, Google Analytics)",
+            "Self-serve reporting & source-of-truth metric design",
+            "Python (Pandas, NumPy)",
+            "Funnel, cohort & retention analytics (churn modeling)",
+            "Data QA & integrity validation (discrepancy audits, eval sets)",
+            "Web Traffic Analysis (source validation, fraud detection)",
+            "Marketing & attribution analytics (ad-tech: RTB, traffic quality)",
+            "Advanced Excel (Power Query, pivot tables, nested formulas)",
+        ],
+
         dataStack: [
-            "AWS Serverless (AWS Lambda, API Gateway)",
-            "Event-driven architecture (EventBridge)",
+            "Cloud data warehouses & lakes (Redshift, Athena, S3)",
+            "AWS Serverless (Lambda, API Gateway, EventBridge)",
             "Infrastructure as Code (AWS SAM, CloudFormation)",
             "API Integrations (REST APIs & Webhooks)",
             "Web Scraping (Playwright, BeautifulSoup, Common Crawl)",
             "AI-augmented analytics & LLM-powered enrichment pipelines",
-            "LLM agent design(Anthropic Claude SDK)",
-            "Prompt Engineering", 
+            "LLM agent design (Anthropic Claude SDK)",
+            "Automated testing & data quality gates (pytest)",
+        ],
 
-        ],
-        
-        analytics: [
-            "BI & dashboards (Power BI, Google Analytics)",
-            "SQL (PostgreSQL, AWS Athena, DuckDB)",
-            "Python (Pandas, NumPy)",
-            "Data storage & processing (S3, Athena)",
-            "Advanced Excel (Power Query, pivot tables, nested formulas)",
-            "Web Traffic Analysis (source validation, fraud detection)",
-            "Ad-tech domain expertise (RTB, attribution, traffic quality)",
-        ],
         business: [
-            "MVP development & rapid prototyping",
-            "Technical ↔ Business Translation", 
+            "Monetization & pricing optimization",
             "Revenue optimization & data-driven decision making",
+            "Technical ↔ Business Translation",
+            "Strategic thought partnership with Product & Marketing",
             "Enterprise account ownership",
             "Cross-functional tooling (Jira, Asana, Confluence, Slack)",
             "Workflow & Process Automation",
-            "Cohort & retention analytics (churn modeling)"
         ]
     },
 
